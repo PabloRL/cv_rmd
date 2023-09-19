@@ -1,0 +1,88 @@
+---
+name: Pablo Rodríguez López
+position: "Ingeniero Industrial | Científico de datos"
+address: "Rafael Fernández 6, 7C. Oviedo (España)"
+profilepic: 230901_pablorl_cv.jpg
+phone: 695110757
+email: "pablorl.oviedo@gmail.com"
+github: pablorl
+linkedin: pablorl
+date: "`r format(Sys.time(), '%B %Y')`"
+output: 
+  vitae::awesomecv:
+    keep_md: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+```
+
+# Sobre mí
+
+ * Soy  **ingeniero industrial** que lleva más de  `r floor(as.numeric(difftime(Sys.Date(),as.Date("2016-10-15"),units = "days"))/365)` años desarrollando su carrera en torno  a la **ciencia del dato**.
+ * Actualmente trabajo en el desarrollo de metodologías reproducibles para el **análisis avanzado y modelado de datos**, y la implementación de herramientas para su **visualización**.
+
+
+# Experiencia laboral
+
+```{r}
+library(tibble)
+tribble(
+  ~ with, ~ what, ~ when, ~where, ~details,
+  "Izertis", "Consultor para E-REDES (EDP)", "2021-act", "Gijón", "Desarrollo de algoritmos de detección precoz de eventos en la red de baja tensión",
+  "Izertis", "Consultor para E-REDES (EDP)", "2021-act", "Gijón", "Analítica avanazada de la red de baja tensión",
+  "Izertis", "Consultor para E-REDES (EDP)", "2021-act", "Gijón", "Desarrollo de herramientas para la visualización de datos",
+  "Ingénica STS","Consultor i+d para empresa del sector siderúrgico","2017-2021","Gijón","Investigación y desarrollo de técnicas de análisis de datos relacionadas con el impacto medioambiental en la producción de acero.",
+    "Ingénica STS","Consultor i+d para empresa del sector siderúrgico","2017-2021","Gijón","Análisis de calidad de aire con sensor LiDAR",
+  "Ingénica STS","Consultor i+d para empresa del sector siderúrgico","2017-2021","Gijón","Desarrollo y puesta en producción de técnicas de aprendizaje automático para la optimización de procesos en la acería",
+  "Ingénica STS","Consultor i+d para empresa del sector siderúrgico","2017-2021","Gijón","Desarrollo de dashboards",
+  "Ingénica STS","Consultor i+d para empresa del sector siderúrgico","2017-2021","Gijón","Desarrollo de aplicaciones web para el tratamiento de datos con Shiny",
+  "EDP","Beca Máster Ing. Industrial","2016-2017","Oviedo, Dpto. Gestión de la Energía","Análisis de datos del mercado eléctrico y elaboración de informes automáticos con VBA"
+
+) %>% 
+  detailed_entries(with,when,what,where, details)
+```
+
+
+
+# Formación universitaria
+
+```{r}
+library(tibble)
+tribble(
+  ~ what, ~ when, ~ with, ~ where,
+  "Máster Universitario en Ciencia de Datos","2020-act","Universitat Oberta de Catalunya","A distancia",
+  "Máster en Ingeniería Industrial", "2015-2018", "Universidad de Oviedo", "Asturias",
+  "Grado en Ingeniería en Tecnologías Industriales", "2010-2015", "Universidad de Oviedo", "Asturias"
+) %>% 
+  detailed_entries(with,when,what,where)
+```
+
+
+# Herramientas tecnológicas
+
+```{r tech}
+tribble(
+   ~type, ~ software, 
+  "Lenguajes de programación", "R -- Python -- SQL -- JAVA -- VBA",
+  "Librerías", "Tidyverse -- Shiny -- Plotly -- sf -- sp -- Scipy -- Pandas -- Numpy  -- Scikit-learn",
+  "Software", "RStudio -- Jupyter -- SAS  -- MS Office -- Git  -- PowerBi"
+) %>% 
+  detailed_entries(what = software, with = type, .protect=FALSE)
+```
+
+
+
+# Idiomas
+
+```{r len}
+tribble(
+   ~ lenguaje, 
+  "Inglés, B2 hablado y escrito",
+) %>% 
+  detailed_entries(what = lenguaje, .protect=FALSE)
+```
+
+
+
